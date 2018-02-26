@@ -1,0 +1,20 @@
+.wrapper {
+  width: 79.23%;
+  max-width: 97.2rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 3.5rem;
+  grid-row-gap: 2.5rem;
+  @include respond-to(handhelds) {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  @include respond-to(medium-screens) {
+    width: 100%;
+    padding: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+}

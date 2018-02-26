@@ -1,0 +1,106 @@
+@import 'fonts';
+
+$font-gothamPro: 'GothamPro';
+$font-gothamProBold: 'GothamProBold';
+$font-gothamProItalic: 'GothamProItalic';
+
+/*=== GothamPro regular ===*/
+body {
+  font-family: $font-gothamPro;
+}
+/*=== /GothamPro regular ===*/
+
+/*=== GothamPro Bold ===*/
+.logo span,
+h1.title,
+h2,
+h3,
+strong,
+.header-slider .slider-caption h1,
+.header-slider .btn-popup {
+  font-family: $font-gothamProBold;
+}
+/*=== /GothamPro Bold ===*/
+
+/*=== GothamPro Italic ===*/
+em {
+  font-family: $font-gothamProItalic;
+}
+/*=== /GothamPro Italic ===*/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($h_lenght, $v_lenght, $blur, $spread, $color) {
+  -webkit-box-shadow: $h_lenght $v_lenght $blur $spread $color;
+  -webkit-box-shadow: $h_lenght $v_lenght $blur $spread $color;
+  -moz-box-shadow: $h_lenght $v_lenght $blur $spread $color;
+  box-shadow: $h_lenght $v_lenght $blur $spread $color;
+}
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+$small: 720px;
+$large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $small + 1 ) and (max-width: $large) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media (min-width: $large + 0.1) { @content; }
+  }
+}
+
+@import 'common';
+@import 'header';
+@import 'articleBlock';
+@import 'columnBlock';
+@import 'miniSlider';
+@import 'headerPopup';
+

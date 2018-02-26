@@ -1,0 +1,57 @@
+.mini-slider {
+  .slick-list {
+    margin: 0 -1.75rem;
+    @include respond-to(handhelds) {
+      margin: 0;
+    }
+  }
+  .slick-arrow {
+    border: 1px solid #707070;
+    &:hover {
+      background-color: #646464;
+    }
+  }
+  .slick-prev {
+    left: -8.3rem;
+  }
+  .slick-next {
+    right: -8.3rem;
+  }
+  li  {
+    padding: 0 1.75rem;
+    @include respond-to(handhelds) {
+      padding: 0;
+    }
+  }
+  @include respond-to(handhelds) {
+    margin-bottom: 13.5rem;
+    .slick-arrow {
+      top: 100%;
+      margin-top: 3.5rem;
+    }
+    .slick-prev {
+      left: 50%;
+      margin-left: -7rem;
+    }
+    .slick-next {
+      right: 50%;
+      margin-right: -7rem;
+    }
+  }
+  @include respond-to(medium-screens) {
+    margin-bottom: 13.5rem;
+    .slick-arrow {
+      top: 100%;
+      margin-top: 3.5rem;
+    }
+    .slick-prev {
+      left: 50%;
+      margin-left: -3.5rem;
+    }
+    .slick-next {
+      right: 50%;
+      margin-right: -10.5rem;
+    }
+  }
+}
+

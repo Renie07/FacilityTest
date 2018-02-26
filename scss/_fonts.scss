@@ -1,0 +1,31 @@
+@mixin font-face($folder, $font-name) {
+  src: url('fonts/#{$folder}/#{$font-name}.eot');
+  src: url('fonts/#{$folder}/#{$font-name}.eot?#iefix') format('embedded-opentype'),
+  url('fonts/#{$folder}/#{$font-name}.woff2') format('woff2'),
+  url('fonts/#{$folder}/#{$font-name}.woff') format('woff'),
+  url('fonts/#{$folder}/#{$font-name}.ttf') format('truetype'),
+  url('fonts/#{$folder}/#{$font-name}.svg##{$font-name}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*=== GothamPro regular ===*/
+@font-face {
+  font-family: 'GothamPro';
+  @include font-face('GothamPro', 'GothamPro');
+}
+/*=== /GothamPro regular ===*/
+
+/*=== GothamPro Bold ===*/
+@font-face {
+  font-family: 'GothamProBold';
+  @include font-face('GothamPro', 'GothamProBold');
+}
+/*=== /GothamPro Bold ===*/
+
+/*=== GothamPro Italic ===*/
+@font-face {
+  font-family: 'GothamProItalic';
+  @include font-face('GothamPro', 'GothamProItalic');
+}
+/*=== /GothamPro Italic ===*/

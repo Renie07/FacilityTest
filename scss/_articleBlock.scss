@@ -1,0 +1,24 @@
+.article-block {
+  width: 65.82%;
+  max-width: 77rem;
+  margin: 0 auto 10.5rem auto;
+
+  h1.title {
+    margin: 5rem 0 8rem 0;
+  }
+
+  p {
+    color: #000;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    margin: 0;
+  }
+  @include respond-to(handhelds) {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  @include respond-to(medium-screens) {
+    width: 65.96%;
+    padding: 0;
+  }
+}

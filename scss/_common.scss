@@ -1,0 +1,183 @@
+$main-color: #646464;
+$main-font-size: 1.4rem;
+$LINE-HEIGHT: 2.4rem;
+
+
+$headers: h1, h2, h3, h4, h5, h6;
+$lists: ul, ol;
+
+*, *:before, *:after {
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 32rem;
+  color: $main-color;
+  background: #fff;
+  line-height: $LINE-HEIGHT;
+  font-size: $main-font-size;
+}
+
+html, form, body, footer, section, iframe, figure, ul, li, table td, blockquote, p, input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+textarea:focus,input:focus, button:focus {
+  outline: none;
+}
+
+footer {
+  line-height: normal;
+  font-size: 0;
+}
+
+img, table, iframe {
+  border: 0;
+}
+table {
+  border-collapse:collapse;
+}
+
+#{$headers} {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+address {
+  margin: 10px 0;
+  line-height: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor:pointer;
+  @include transition(all 0.5s);
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+  color: #646464;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: #545ad8;
+    }
+}
+
+p, h2, h3, h4, h5, h6{
+  margin: 0 0 15px;
+}
+
+.container-wrap {
+  max-width: 117rem;
+  margin: 0 auto;
+  @include respond-to(handhelds) {
+    max-width: 93.75%;
+  }
+  @include respond-to(medium-screens) {
+    max-width: 94rem;
+    padding: 0 1rem;
+  }
+}
+
+.mini-wrapper {
+  width: 79.23%;
+  max-width: 97.2rem;
+  margin: 0 auto;
+  @include respond-to(handhelds) {
+    width: 100%;
+  }
+  @include respond-to(medium-screens) {
+    max-width: 94rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+.flex-center {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin: 3.5rem 0;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -1.5rem;
+    display: inline-block;
+    height: 2rem;
+    width: 3rem;
+    border-bottom: 2px solid;
+    margin-top: 1rem;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  margin: 0 0 2rem 0;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin: 3rem 0;
+  text-transform: uppercase;
+}
+
+.close{
+  position: relative;
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  overflow: hidden;
+  cursor: pointer;
+  float: right;
+  margin-right: 0.5rem;
+  &:hover {
+    &::before, &::after {
+      background: #020202;
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+  }
+  &::before {
+    @include transform(rotate(45deg));
+  }
+  &::after {
+    @include transform(rotate(-45deg));
+  }
+}
+
